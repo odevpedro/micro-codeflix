@@ -1,0 +1,7 @@
+rootProject.name = 'fc3-admin-do-catalogo'
+include 'src:main:Domain'
+findProject(':src:main:Domain')?.name = 'Domain'
+include 'application'
+include 'infrastructure'
+include 'domain'
+
