@@ -1,5 +1,7 @@
 package com.odevpedro.admin.catalogo.domain.category;
 
+import com.odevpedro.admin.catalogo.domain.exceptions.DomainException;
+import com.odevpedro.admin.catalogo.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -19,9 +21,9 @@ public class CategoryTest {
 
         actualCategory.validate();
         final var actualExpection =
-                Assertions.assertThrows(DomainException.class, () -> actualCategory.validate());
-        Assertions.assertEquals(expectedErrorCount,actualExpection.getErros().size());
-        Assertions.assertEquals(expectedErrorMessage,actualExpection.getErros().get(0));
+                Assertions.assertThrows(DomainException.class, () -> actualCategory.validate(new ThrowsValidationHandler()));
+        Assertions.assertEquals(expectedErrorCount,actualExpection.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage,actualExpection.getErrors().get(0));
 
 
 

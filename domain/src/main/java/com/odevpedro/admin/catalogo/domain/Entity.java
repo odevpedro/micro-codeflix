@@ -1,5 +1,7 @@
 package com.odevpedro.admin.catalogo.domain;
 
+import com.odevpedro.admin.catalogo.domain.validation.ValidationHandler;
+
 import java.util.Objects;
 
 public abstract class Entity<ID extends Identifier> {
@@ -11,6 +13,9 @@ public abstract class Entity<ID extends Identifier> {
         Objects.requireNonNull(id, "'id' should not be null");
         this.id = id;
     }
+
+    public abstract void validate(ValidationHandler handler);
+
 
     public ID getId(){
         return id;
