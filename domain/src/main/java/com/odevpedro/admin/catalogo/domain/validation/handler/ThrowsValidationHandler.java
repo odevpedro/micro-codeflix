@@ -1,7 +1,9 @@
 package com.odevpedro.admin.catalogo.domain.validation.handler;
 
+
+
+
 import com.odevpedro.admin.catalogo.domain.exceptions.DomainException;
-import com.odevpedro.admin.catalogo.domain.validation.Error;
 import com.odevpedro.admin.catalogo.domain.validation.ValidationHandler;
 
 import java.util.List;

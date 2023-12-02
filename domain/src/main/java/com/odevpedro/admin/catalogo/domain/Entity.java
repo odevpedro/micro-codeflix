@@ -1,5 +1,6 @@
 package com.odevpedro.admin.catalogo.domain;
 
+
 import com.odevpedro.admin.catalogo.domain.validation.ValidationHandler;
 
 import java.util.Objects;

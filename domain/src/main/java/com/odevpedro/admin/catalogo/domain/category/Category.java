@@ -2,11 +2,8 @@ package com.odevpedro.admin.catalogo.domain.category;
 
 import com.odevpedro.admin.catalogo.domain.AggregateRoot;
 import com.odevpedro.admin.catalogo.domain.validation.ValidationHandler;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.Instant;
-import java.util.UUID;
 
 
 public class Category extends AggregateRoot<CategoryID> {
@@ -26,8 +23,7 @@ public class Category extends AggregateRoot<CategoryID> {
                     Instant aUpdateDate,
                     Instant aDeleteDate)
     {
-        super(andId);
-        this.name = aName;
+        super(andId); this.name = aName;
         this.description = aDescription;
         this.active = isActive;
         this.createdAt = aCreationDate;
@@ -42,7 +38,7 @@ public class Category extends AggregateRoot<CategoryID> {
     }
 
     @Override
-    public void validate(final ValidationHandler handler){
+    public void validate(final ValidationHandler handler) {
         new CategoryValidator(this, handler).validate();
     }
 
